@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>GetShayna by BuildWith Angga</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+      <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="assets/style.css">
+    </head>
+    <body>
+    <section class="h-100 w-100 bg-white">
+      <div class="container-xxl mx-auto p-0  position-relative header-2-1" style="font-family: 'Poppins', sans-serif">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a href="#">
+            <img style="margin-right: 0.75rem"
+              src="assets/logo.svg" alt="" />
+          </a>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="modal" data-bs-target="#targetModal-item">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="modal-item modal fade" id="targetModal-item" tabindex="-1" role="dialog"
+            aria-labelledby="targetModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content bg-white border-0">
+                <div class="modal-header border-0" style="padding: 2rem; padding-bottom: 0">
+                  <a class="modal-title" id="targetModalLabel">
+                    <img style="margin-top: 0.5rem"
+                      src="assets/logo.svg"
+                      alt="" />
+                  </a>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="padding: 2rem; padding-top: 0; padding-bottom: 0">
+                  <ul class="navbar-nav responsive me-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Keunggulan</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pesan</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Tentang Kami</a>
+                    </li>
+                  
+                  </ul>
+                </div>
+                <div class="modal-footer border-0 gap-3" style="padding: 2rem; padding-top: 0.75rem">
+                  <button class="btn btn-default btn-no-fill">
+                    Log In
+                  </button>
+                  <button class="btn btn-fill text-white">Try Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Beranda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Keunggulan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pesan Tiket</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tentang Kami</a>
+              </li>
+            </ul>
+            <div class="gap-3">
+              <button class="btn btn-fill text-white">Masuk</button>
+            </div>
+          </div>
+        </nav>
+        <div>
+            <div class="mx-auto d-flex flex-lg-row flex-column hero">
+              <!-- Left Column -->
+              <div
+                class="left-column d-flex flex-lg-grow-1 flex-column align-items-lg-start text-lg-start align-items-center text-center mt-5">
+                <p class="text-caption">Perjalanan laut tanpa repot</p>
+                <!-- Perjalanan laut tanpa repot,<br class="d-lg-block d-none" /> -->
+                <h4 class="title-text-big">
+        
+                  Tiket online tersedia!
+                </h4>
+              </div>
+              <!-- Right Column -->
+              <div class="right-column text-center d-flex justify-content-center pe-0">
+                <img id="img-fluid" class="h-auto mw-100"
+                  src="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header2/Header-2-1.png"
+                  alt="" />
+              </div>
+            </div>
+        </div>
+        
+        <div>
+          
+        </div>
+      </div>
+    </section>
+    <section class="h-100 w-100 bg-white" style="">
+        <div class="content-2-1 container-xxl mx-auto p-0  position-relative" style="font-family: 'Poppins', sans-serif">
+          <section id="pesan"></section>
+          <div class="card-block">
+            <div class="card card-custom">
+              <form action="{{ route('beranda.index') }}" method="GET">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label fw-bold text-white" >Travel Tujuan</label>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="input-group mb-3">
+                          <label class="input-group-text" for="inputGroupSelect01" @readonly(true)>From</label>
+                          <select class="form-select" name="asal" id="inputGroupSelect01">
+                            <option value="">Bawean</option>
+    
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group mb-3">
+                          <label class="input-group-text" for="inputGroupSelect01">To</label>
+                          <select class="form-select" name="tujuan" id="inputGroupSelect01">
+                            <option value="">Gresik</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label fw-bold text-white">Jumlah Penumpang</label>
+                    <input type="number" name="jumlah" min="1" value=""  class="form-control" id="exampleFormControlInput1" placeholder="Masukkan jumlah penumpang">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label fw-bold text-white">Tanggal Keberangkatan</label>
+                    <input type="text" class="form-control" id="datepicker" value="" name="tanggal" placeholder="Masukkan Tanggal Keberangkatan">
+                  </div>
+                </div>
+                <div class="col-md-4 h-100">
+                  <div class="mt-3">
+                    <button type="submit" class="btn btn-warning w-100 py-3"> Cari Jadwal</button>
+                  </form>
+    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="card">
+                <div class="card-header">
+                <h4 class="text-center fw-bold py-3 text-white">Hasil Pencarian</h4>
+                </div>
+                <div class="card-body text-white">
+                <div class="table-responsive">
+                    <table class="table">
+                    <thead>
+                        <tr class="text-white">
+                        <th scope="col">Foto</th>
+                        <th scope="col">Nama Kapal</th>
+                        <th scope="col">Berangkat</th>
+                        <th scope="col">Durasi</th>
+                        <th scope="col">Tiba</th>
+                        <th scope="col">Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-white py-5">
+                        <td width="20%">
+                            <img src="assets/img/bag-1.jpg" class="img-fluid rounded-1 my-3" alt="">
+                        </td>
+                        <td class="">
+                            <div class="mt-3">
+                            <h5 class="fw-bold">Kapal Pesiar</h5>
+                            <p class="text-muted">EKONOMI</p>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="mt-3">Bawean</p>
+                            <small class="text-muted">12:01:00</small>
+                        </td>
+                        <td>
+                            <div class="d-flex flex-column mt-3">
+                            <div>
+                                <svg width="50px" class="text-warning" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#023047" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                </svg>
+                            </div>
+                            <div class="mt-3">
+                                <small>1 Jam</small>
+                            </div>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="mt-3">Gresik</p>
+                            <small class="text-muted">12:01:00</small>
+                        </td>
+                        <td>
+                            <div class="mt-3 d-flex flex-column">
+                            <h6 class="fw-bold">Rp. 2.000.000</h6>
+                            <button class="btn btn-warning mt-2 py-2 pesan-modal"  data-bs-toggle="modal" data-bs-target="#pesanModal" data-id="{{ $item->id }}">Pesan</button>
+                            <small class="text-muted mt-2 pesan-modal">Sisa 12 penumpang</small>
+                         
+                            </div>
+                        </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+          <div class="text-center title-text">
+            <h1 class="text-title">3 Keys Benefit</h1>
+            <p class="text-caption" style="margin-left: 3rem; margin-right: 3rem">
+              You can easily manage your business with a powerful tools
+            </p>
+          </div>
+          <section id="keunggulan"></section>
+          <div class="grid-padding text-center">
+            <div class="row">
+              <div class="col-lg-4 column">
+                <div class="icon">
+                  <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-2.png"
+                    alt="" />
+                </div>
+                <h3 class="icon-title fw-bold">Cepat</h3>
+                <p class="icon-caption">
+                  Pembayaran menggunakan payment gateway<br />
+                </p>
+              </div>
+              <div class="col-lg-4 column">
+                <div class="icon">
+                  <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-3.png"
+                    alt="" />
+                </div>
+                <h3 class="icon-title fw-bold">Aman</h3>
+                <p class="icon-caption">
+                    Data pengguna dijamin <br>  keamanan
+                </p>
+              </div>
+              <div class="col-lg-4 column">
+                <div class="icon">
+                  <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-4.png"
+                    alt="" />
+                </div>
+                <h3 class="icon-title fw-bold">Praktis</h3>
+                <p class="icon-caption">
+                  Pembelian tidak perlu <br /> datang ditempat
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="h-100 w-100 footer">
+        <div class="footer-2-3 container-xxl mx-auto position-relative p-0" style="font-family: 'Poppins', sans-serif">
+          <div class="list-footer">
+            <div class="row gap-md-0 gap-3">
+              <div class="col-lg-12 col-md-6">
+                <div class="">
+                  <div class="d-flex justify-content-center">
+                    <img src="assets/logo.svg"
+                      alt="" />
+                  </div>
+                  <nav class="list-unstyled d-flex justify-content-center my-3">
+                    <li class="list-space mx-2">
+                      <a href="{{ route('beranda.index') }}#beranda" class="list-menu">Beranda</a>
+                    </li>
+                    <li class="list-space mx-2">
+                      <a href="#keunggulan" class="list-menu">Keunggulan</a>
+                    </li>
+                    <li class="list-space mx-2">
+                      <a href="#pesan" class="list-menu">Pesan Tiket</a>
+                    </li>
+                    <li class="list-space mx-2">
+                      <a href="#" class="list-menu">Tentang Kami</a>
+                    </li>
+    
+                  </nav>
+                </div>
+              </div>
+    
+            </div>
+          </div>
+    
+          <div class="border-color info-footer">
+            <div class="">
+              <hr class="hr" />
+            </div>
+            <div class="mx-auto d-flex flex-column flex-lg-row align-items-center footer-info-space gap-4">
+    
+              <nav class="d-flex flex-lg-row flex-column align-items-center justify-content-center">
+                <p style="margin: 0">Copyright © 2021 E-Tiker Universitas Nurul Jadid</p>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </html>
